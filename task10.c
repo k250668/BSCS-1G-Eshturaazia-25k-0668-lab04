@@ -5,6 +5,7 @@ int main() {
     int N;
     int N2;
     int time;
+    int size;
     printf("How many pizzas do you want (1,2 or 3)?\n");
 	scanf("%d",&N);
 	switch(N){
@@ -20,6 +21,35 @@ int main() {
 		default:
 		    printf("choose among 1-3\n");
 	}
+	 printf("Choose size:\n");
+    printf("1: Small\n");
+    printf("2: Medium\n");
+    printf("3: Large\n");
+    scanf("%d", &size);
+    switch(size) {
+        case 1:
+            if (N == 1) Total = 8;
+            else if (N == 2) Total = 16;
+            else if (N == 3) Total = 21;
+            else { printf("Choose 1–3 pizzas only.\n"); return 0; }
+            break;
+        case 2:
+            if (N==1) Total = 10;
+            else if (N==2) Total = 20;
+            else if (N==3) Total = 30;
+            else { printf("Choose 1–3 pizzas only.\n"); return 0; }
+            break;
+        case 3:
+            if (N==1) Total = 15;
+            else if (N==2) Total = 28;
+            else if (N==3) Total = 36;
+            else { printf("Choose 1–3 pizzas only.\n"); return 0; }
+            break;
+        default:
+            printf("Invalid size choice.\n");
+            return 0;
+    }
+            
 	
     
 	printf("Now choose crust type:\n");
@@ -83,7 +113,7 @@ char StudId;
 	}
     printf("Your total price is =$%d \n",Total);
     if ( N ==3 && N2 == 3 ) {
-    	printf("and you get free garlic bread");
+    	printf("and you get free garlic bread!");
 	}
     
     return 0;
